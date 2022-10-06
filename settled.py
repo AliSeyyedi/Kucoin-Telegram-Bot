@@ -1,11 +1,14 @@
 import headers as H
+import requests
+import account
+import json
 
 endpoint = '/api/v1/margin/lend/trade/settled?currency=ETH&currentPage=1&pageSize=50'
 method = 'GET'
 
 def getSettledOrders():
     headers = H.getHeaders(method, endpoint)
-    getSettledOrders = requests.get(url + endpoint, headers=headers).json()
+    getSettledOrders = requests.get(account.url + endpoint, headers=headers).json()
     getSettledOrders = (getSettledOrders.get('data'))
     getSettledOrders = getSettledOrders["items"]
     output = ''

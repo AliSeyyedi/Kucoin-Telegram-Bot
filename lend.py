@@ -1,4 +1,7 @@
 import headers as H
+import requests
+import account
+import json
 
 endpoint = '/api/v1/margin/lend'
 method = 'POST'
@@ -13,7 +16,7 @@ def PlaceEthLendOrder():
   data_json = json.dumps(params)
   endpoint = endpoint + data_json
   headers = H.getHeaders(method, endpoint)
-  PlaceEthLendOrder = requests.post(url + endpoint,data=data_json, headers=headers).json()
+  PlaceEthLendOrder = requests.post(account.url + endpoint,data=data_json, headers=headers).json()
   PlaceEthLendOrder = (PlaceEthLendOrder.get('data'))
   PlaceEthLendOrder = json.dumps(PlaceEthLendOrder)
   PlaceEthLendOrder = json.loads(PlaceEthLendOrder)

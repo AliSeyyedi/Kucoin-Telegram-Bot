@@ -1,11 +1,14 @@
 import headers as H
+import requests
+import account
+import json
 
 endpoint = '/api/v1/accounts?currency=ETH&type=main'
 method = 'GET'
 
 def getBalance():
     headers = H.getHeaders(method, endpoint)
-    Balance = requests.get(url + endpoint, headers=headers).json()
+    Balance = requests.get(account.url + endpoint, headers=headers).json()
     Balance = (Balance.get('data'))
     Balance = Balance[0]
     Balance = json.dumps(Balance)

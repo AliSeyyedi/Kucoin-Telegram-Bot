@@ -1,11 +1,14 @@
 import headers as H
+import requests
+import account
+import json
 
 endpoint =  '/api/v1/margin/lend/trade/unsettled?currency=ETH&currentPage=1&pageSize=50'
 method = 'GET'
 
 def getUnsettledOrders():
     headers = H.getHeaders(method, endpoint)
-    getUnsettledOrders = requests.get(url + endpoint, headers=headers).json()
+    getUnsettledOrders = requests.get(account.url + endpoint, headers=headers).json()
     getUnsettledOrders = (getUnsettledOrders.get('data'))
     getUnsettledOrders = getUnsettledOrders["items"]
     output = ''

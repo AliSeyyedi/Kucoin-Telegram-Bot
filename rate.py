@@ -1,5 +1,6 @@
 import requests
 import account
+import json
 
 endpoint = '/api/v1/margin/market?currency=ETH&term=7'
 
