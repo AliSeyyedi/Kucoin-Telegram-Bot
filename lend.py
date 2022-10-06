@@ -13,10 +13,9 @@ def PlaceEthLendOrder():
     'dailyIntRate'  : '0.002',
     'term'          : '7'
   }
-  data_json = json.dumps(params)
-  newendpoint = endpoint + data_json
-  headers = H.getHeaders(method, newendpoint)
-  PlaceEthLendOrder = requests.post(account.url + endpoint,data=data_json, headers=headers).json()
+  data = json.dumps(params)
+  headers = H.getHeaders(method, endpoint, data)
+  PlaceEthLendOrder = requests.post(account.url + endpoint, data=data, headers=headers).json()
   print(PlaceEthLendOrder)
   # PlaceEthLendOrder = (PlaceEthLendOrder.get('data'))
   # PlaceEthLendOrder = json.dumps(PlaceEthLendOrder)
