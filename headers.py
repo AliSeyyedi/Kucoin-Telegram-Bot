@@ -1,4 +1,4 @@
-
+import time
 
 def getHeaders(method, endpoint):
     now = int(time.time() * 1000)
