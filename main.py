@@ -18,7 +18,7 @@ class IsAdmin(telebot.custom_filters.SimpleCustomFilter):
 def echo_all(message):
 	bot.reply_to(message, 'Welcome '+ str(message.chat.first_name))
 
-@bot.message_handler(commands=['ethrate'], isAdmin=True)
+@bot.message_handler(commands=['rate'], isAdmin=True)
 def echo_all(message):
 	bot.reply_to(message, rate.getEthRate())
 
