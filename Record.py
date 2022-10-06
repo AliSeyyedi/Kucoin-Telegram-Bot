@@ -1,10 +1,10 @@
-import Headers
+import headers as H
 
 endpoint = '/api/v1/margin/lend/assets?currency=ETH'
 method = 'GET'
 
 def getRecord():
-    headers = Headers.getHeaders(method, endpoint)
+    headers = H.getHeaders(method, endpoint)
     getRecord = requests.get(url + endpoint, headers=headers).json()
     getRecord = (getRecord.get('data'))
     getRecord = getRecord[0]

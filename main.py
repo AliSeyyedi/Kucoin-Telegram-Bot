@@ -11,6 +11,13 @@ import hashlib
 from datetime import datetime
 import pytz
 
+import balance
+import lend
+import rate
+import record
+import settled
+import unsettled
+
 # client = Client(api_key, api_secret, api_passphrase)
 
 # real acc
@@ -40,27 +47,27 @@ def echo_all(message):
 
 @bot.message_handler(commands=['ethrate'], isAdmin=True)
 def echo_all(message):
-	bot.reply_to(message, getEthRate())
+	bot.reply_to(message, rate.getEthRate())
 
 @bot.message_handler(commands=['unsettled'], isAdmin=True)
 def echo_all(message):
-	bot.reply_to(message, getUnsettledOrders())
+	bot.reply_to(message, unsettled.getUnsettledOrders())
 
 @bot.message_handler(commands=['settled'], isAdmin=True)
 def echo_all(message):
-	bot.reply_to(message, getSettledOrders())
+	bot.reply_to(message, settled.getSettledOrders())
 
 @bot.message_handler(commands=['record'], isAdmin=True)
 def echo_all(message):
-	bot.reply_to(message, getRecord())
+	bot.reply_to(message, record.getRecord())
 
 @bot.message_handler(commands=['lend'], isAdmin= True)
 def echo_all(message):
-	bot.reply_to(message, PlaceEthLendOrder())
+	bot.reply_to(message, lend.PlaceEthLendOrder())
 
 @bot.message_handler(commands=['balance'], isAdmin= True)
 def echo_all(message):
-	bot.reply_to(message, getBalance())
+	bot.reply_to(message, balance.getBalance())
 
 bot.add_custom_filter(IsAdmin())
 

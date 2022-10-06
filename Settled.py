@@ -1,10 +1,10 @@
-import Headers
+import headers as H
 
 endpoint = '/api/v1/margin/lend/trade/settled?currency=ETH&currentPage=1&pageSize=50'
 method = 'GET'
 
 def getSettledOrders():
-    headers = Headers.getHeaders(method, endpoint)
+    headers = H.getHeaders(method, endpoint)
     getSettledOrders = requests.get(url + endpoint, headers=headers).json()
     getSettledOrders = (getSettledOrders.get('data'))
     getSettledOrders = getSettledOrders["items"]

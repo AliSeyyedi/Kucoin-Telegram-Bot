@@ -1,4 +1,5 @@
-import main
+
+
 def getHeaders(method, endpoint):
     now = int(time.time() * 1000)
     str_to_sign = str(now) + method + endpoint
@@ -9,6 +10,7 @@ def getHeaders(method, endpoint):
     'KC-API-SIGN': signature,
     'KC-API-TIMESTAMP': str(now),
     'KC-API-PASSPHRASE': passphrase,
-    'KC-API-KEY-VERSION': "1"
+    'KC-API-KEY-VERSION': "1",
+    'Content-Type': 'application/json'
     }
     return headers
