@@ -1,3 +1,4 @@
+import requests
 
 endpoint = '/api/v1/margin/market?currency=ETH&term=7'
 

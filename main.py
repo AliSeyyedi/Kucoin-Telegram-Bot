@@ -2,7 +2,6 @@ from kucoin.client import Client
 from kucoin.market import market
 from kucoin.asyncio import KucoinSocketManager
 from webbrowser import get
-import requests
 import json
 import time
 import pybase64 as base64
