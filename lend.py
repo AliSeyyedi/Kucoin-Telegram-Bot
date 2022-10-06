@@ -12,11 +12,11 @@ import hashlib
 endpoint = '/api/v1/margin/lend'
 method = 'POST'
 
-def PlaceEthLendOrder():
+def PlaceEthLendOrder(size, rate):
   params = {
   'currency'      : 'ETH' ,
-  'size'          : '0.05' ,
-  'dailyIntRate'  : '0.002',
+  'size'          : size ,
+  'dailyIntRate'  : rate,
   'term'          : '7'
   }
   data = json.dumps(params)

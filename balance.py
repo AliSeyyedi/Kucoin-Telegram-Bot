@@ -18,5 +18,5 @@ def getBalance():
     balance       = str(Balance['balance'])
     available     = str(Balance['available'])
     holds         = str(Balance['holds'])
-    output = (currency+ '\nAcc typeg: '+ acctype + '\nBalance: '+ balance+ '\nAvailable: '+ available+ '\nHolds: '+ holds)
+    output = ('currency: '+ currency + '\nAcc type: '+ acctype + '\nBalance: '+ balance+ '\nAvailable: '+ available+ '\nHolds: '+ holds)
     return output

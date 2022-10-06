@@ -44,8 +44,27 @@ def echo_all(message):
 	bot.reply_to(message, record.getRecord())
 
 @bot.message_handler(commands=['lend'], isAdmin= True)
-def echo_all(message):
-	bot.reply_to(message, lend.PlaceEthLendOrder())
+def welcome(message):
+    sent_msg = bot.send_message(message.chat.id, "Enter Size:")
+    bot.register_next_step_handler(sent_msg, size_handler)
+
+def size_handler(message):
+    size = message.text
+    sent_msg = bot.send_message(message.chat.id, "Enter Rate:")
+    bot.register_next_step_handler(sent_msg, rate_handler, size)
+
+def rate_handler(message, size):
+	rate = message.text
+	sent_msg = bot.send_message(message.chat.id, f"{size} Eth, for {rate} a day. yes/no") 
+	bot.register_next_step_handler(sent_msg, placeOrder, size, rate)
+
+def placeOrder(message, size,rate):
+	answer = message.text
+	if answer == 'yes':
+		bot.reply_to(message, lend.PlaceEthLendOrder(size,rate))
+	else:
+		bot.reply_to(message, 'Canceled')
+
 
 @bot.message_handler(commands=['balance'], isAdmin= True)
 def echo_all(message):
