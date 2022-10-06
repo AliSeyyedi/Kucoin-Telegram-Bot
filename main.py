@@ -2,12 +2,11 @@ from kucoin.client import Client
 from kucoin.market import market
 from kucoin.asyncio import KucoinSocketManager
 from webbrowser import get
-import pybase64 as base64
-import hmac
-import hashlib
+
+
+
 from datetime import datetime
 import pytz
-
 import balance
 import lend
 import rate

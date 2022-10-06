@@ -14,12 +14,13 @@ def PlaceEthLendOrder():
     'term'          : '7'
   }
   data_json = json.dumps(params)
-  headers = H.getHeaders(method, endpoint+data_json)
+  newendpoint = endpoint + data_json
+  headers = H.getHeaders(method, newendpoint)
   PlaceEthLendOrder = requests.post(account.url + endpoint,data=data_json, headers=headers).json()
-  PlaceEthLendOrder = (PlaceEthLendOrder.get('data'))
-  PlaceEthLendOrder = json.dumps(PlaceEthLendOrder)
-  PlaceEthLendOrder = json.loads(PlaceEthLendOrder)
-  PlaceEthLendOrder = PlaceEthLendOrder["orderId"]
-  PlaceEthLendOrder = str(PlaceEthLendOrder)
   print(PlaceEthLendOrder)
+  # PlaceEthLendOrder = (PlaceEthLendOrder.get('data'))
+  # PlaceEthLendOrder = json.dumps(PlaceEthLendOrder)
+  # PlaceEthLendOrder = json.loads(PlaceEthLendOrder)
+  # PlaceEthLendOrder = PlaceEthLendOrder["orderId"]
+  # PlaceEthLendOrder = str(PlaceEthLendOrder)
   return PlaceEthLendOrder
