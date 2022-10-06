@@ -34,6 +34,10 @@ def echo_all(message):
 def echo_all(message):
 	bot.reply_to(message, record.getRecord())
 
+@bot.message_handler(commands=['balance'], isAdmin= True)
+def echo_all(message):
+	bot.reply_to(message, balance.getBalance())
+	
 @bot.message_handler(commands=['lend'], isAdmin= True)
 def welcome(message):
     sent_msg = bot.send_message(message.chat.id, "Enter Size:")
@@ -56,10 +60,6 @@ def placeOrder(message, size,rate):
 	else:
 		bot.reply_to(message, 'Canceled')
 
-
-@bot.message_handler(commands=['balance'], isAdmin= True)
-def echo_all(message):
-	bot.reply_to(message, balance.getBalance())
 
 bot.add_custom_filter(IsAdmin())
 
