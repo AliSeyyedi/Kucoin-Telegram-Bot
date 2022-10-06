@@ -14,8 +14,7 @@ def PlaceEthLendOrder():
     'term'          : '7'
   }
   data_json = json.dumps(params)
-  endpoint = endpoint + data_json
-  headers = H.getHeaders(method, endpoint)
+  headers = H.getHeaders(method, endpoint+data_json)
   PlaceEthLendOrder = requests.post(account.url + endpoint,data=data_json, headers=headers).json()
   PlaceEthLendOrder = (PlaceEthLendOrder.get('data'))
   PlaceEthLendOrder = json.dumps(PlaceEthLendOrder)
