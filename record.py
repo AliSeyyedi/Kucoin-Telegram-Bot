@@ -21,5 +21,5 @@ def getRecord():
     totallaccruedProfit = str("%.9f" %(float(getRecord['accruedInterest'])+float(getRecord['realizedProfit'])))
     totallaccruedProfitPercent = str((float(totallaccruedProfit)*100)/0.2)
     isAutoLend          = str(getRecord['isAutoLend'])
-    output = (currency+ '\nOut Standing: '+ outstanding + '\nFilled Size: '+ filledSize+ '\nAccrued Interest: '+ accruedInterest+ '\nRealized Profit: '+ realizedProfit + '\nTotall Accrued Profit: '+ totallaccruedProfit + '\nTotall Accrued Profit %: '+ totallaccruedProfitPercent+ '\nIs Auto Lend: '+ isAutoLend)
+    output = ('Currency: '+ currency+ '\nOut Standing: '+ outstanding + '\nFilled Size: '+ filledSize+ '\nAccrued Interest: '+ accruedInterest+ '\nRealized Profit: '+ realizedProfit + '\nTotall Accrued Profit: '+ totallaccruedProfit + '\nTotall Accrued Profit %: '+ totallaccruedProfitPercent+ '\nIs Auto Lend: '+ isAutoLend)
     return output

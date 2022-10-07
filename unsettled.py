@@ -2,6 +2,7 @@ import headers as H
 import requests
 import account
 import json
+from datetime import datetime
 
 endpoint =  '/api/v1/margin/lend/trade/unsettled?currency=ETH&currentPage=1&pageSize=50'
 method = 'GET'
@@ -23,7 +24,7 @@ def getUnsettledOrders():
         dailyIntRate    = str(orders['dailyIntRate'])
         maturityTime    = int(orders['maturityTime'])
         maturityTime    = maturityTime / 1000
-        tz = pytz.timezone('Asia/Tehran')
+        # tz = pytz.timezone('Asia/Tehran')
         maturityTime    = str(datetime.utcfromtimestamp(maturityTime).strftime('%Y-%m-%d %H:%M:%S'))
-        output = ('\n\n'+ str(i+1)+ '.\ncurrency: '+ currency+ '\nSize: '+ size+ '\nAccrued Interest: '+ accruedInterest + '\nRepaid: '+ repaid+ '\nDaily Int Rate: '+ dailyIntRate+ '\nMaturity Time: '+ maturityTime)
+        output = ('\n\n'+ str(i+1)+ '.\nCurrency: '+ currency+ '\nSize: '+ size+ '\nAccrued Interest: '+ accruedInterest + '\nRepaid: '+ repaid+ '\nDaily Int Rate: '+ dailyIntRate+ '\nMaturity Time: '+ maturityTime)
     return output
