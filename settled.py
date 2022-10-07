@@ -25,5 +25,5 @@ def getSettledOrders():
         settledAt    = settledAt / 1000
         tz = pytz.timezone('Asia/Tehran')
         settledAt    = str(datetime.utcfromtimestamp(settledAt).strftime('%Y-%m-%d %H:%M:%S'))
-        output = output + ('\n\n'+ str(i+1)+ '.\n' + currency+ '\nSize: '+ size+ '\nInterest: '+ interest + '\nRepaid: '+ repaid+ '\nDaily Int Rate: '+ dailyIntRate+ '\nSettled At: '+ settledAt)
+        output = output + ('\n\n'+ str(i+1)+ '.\ncurrency: ' + currency+ '\nSize: '+ size+ '\nInterest: '+ interest + '\nRepaid: '+ repaid+ '\nDaily Int Rate: '+ dailyIntRate+ '\nSettled At: '+ settledAt)
     return output

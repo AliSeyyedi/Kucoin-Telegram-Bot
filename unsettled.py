@@ -25,5 +25,5 @@ def getUnsettledOrders():
         maturityTime    = maturityTime / 1000
         tz = pytz.timezone('Asia/Tehran')
         maturityTime    = str(datetime.utcfromtimestamp(maturityTime).strftime('%Y-%m-%d %H:%M:%S'))
-        output = ('\n\n'+ str(i+1)+ '.\n' + currency+ '\nSize: '+ size+ '\nAccrued Interest: '+ accruedInterest + '\nRepaid: '+ repaid+ '\nDaily Int Rate: '+ dailyIntRate+ '\nMaturity Time: '+ maturityTime)
+        output = ('\n\n'+ str(i+1)+ '.\ncurrency: '+ currency+ '\nSize: '+ size+ '\nAccrued Interest: '+ accruedInterest + '\nRepaid: '+ repaid+ '\nDaily Int Rate: '+ dailyIntRate+ '\nMaturity Time: '+ maturityTime)
     return output
