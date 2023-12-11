@@ -6,7 +6,7 @@ import settled
 import unsettled
 
 import telebot
-bot = telebot.TeleBot("5770954393:AAGNoG-90wKV-Xwpaei-PKGn-QwAyljolok")
+bot = telebot.TeleBot("xxxxxxxxxx:xxxxxx-xxxxx-xxxxxx-xxxx-xxxxxxxxxx")
 
 class IsAdmin(telebot.custom_filters.SimpleCustomFilter):
     key='isAdmin'
